@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+	</head>
+	<body>
+		<!--导航-->
+		<div id="nav">
+			<a href="#" class="logo"></a>
+			<div class="nav-bar">
+				<div class="nav-bg"></div>
+				<a href="register.html">REGISTER</a>
+				<a href="login.html">LOGIN</a>
+				<a href="case.html">CASE</a>
+				<a href="homepage.html">HOME</a>
+			</div>
+			<ul class="share clearfix">
+				<li><a href="#"></a></li>
+				<li>
+					<a href="#"></a>
+					<div class="ca-code">
+						<p>IceArt wechat</p>
+						<img src="img/code.jpg"/>
+					</div>
+				</li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+		
+		<!--鼠标跟随气泡-->
+		<canvas id="with-bub"></canvas>
+		
+		<!--正式表单部分-->
+		<div id="register-box">
+			<!--Tab-->
+			<div id="line">
+				<div id="left-hand" class="active show"></div>
+				<div id="right-hand"></div>
+			</div>
+			<!--register-->
+			<div class="register">
+				<!--扫码登录-->
+				<form action="" method="post" class="scan-code">
+					<p>手机扫码，安全登录</p>
+					<span></span>
+				</form>
+				<!--密码登录-->
+				<form action="" method="post" name="pasform" class="pas" autocomplete="off">
+					<ul>
+						<li><input type="text" name="phonenum" placeholder="请输入手机号"/><p class="err"></p></li>
+						<li><input type="password" name="pass" placeholder="请输入密码"/><p class="err"></p></li>
+						<li class="message clearfix"><input type="text" name="message" placeholder="请输入6位验证码"/><p class="err"></p><input type="button" name="getm" value="获取短信验证码"/></li>
+						<li class="remember"><input type="checkbox" name="rem"/><span>记住密码</span></li>
+						<li class="forget clearfix"><a href="#">忘记密码?</a><a href="login.html">立即注册</a></li>
+						<li class="submit"><input type="submit" name="sub" value="登录"/></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/commom.js"></script>
+	<script src="js/register.js"></script>
+</html>

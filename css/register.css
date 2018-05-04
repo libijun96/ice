@@ -1,0 +1,279 @@
+body{
+	background:linear-gradient(#000,#282626);
+	background-size:cover;
+	color:#fff;
+}
+#register-box{
+	position:absolute;
+	top:15%;
+	left:50%;
+	padding:50px;
+	margin-left:-225px;
+	z-index:1111;
+}
+/*tab切换*/
+/*线*/
+#line{
+	position:relative;
+	width:340px;
+	height:1px;
+	margin-bottom:70px;
+ 	background-color:rgba(255,255,255,.3);
+ 	transition:all .3s;
+ 	z-index:-2;
+}
+/*中间游走的短线*/
+#line.go-left:after,
+#line.go-right:after{
+	position:absolute;
+	top:0;
+	content:"";
+	height:1px;
+	background-color:#fff;
+	z-index:-1;
+}
+/*游走的线的运动*/
+#line.go-left:after{
+	animation:right-to-left .4s ease-in-out;
+}
+#line.go-right:after{
+	animation:left-to-right .4s ease-in-out;
+}
+@keyframes left-to-right{
+	0%{
+		width:0;
+		left:0;
+	}
+	50%{
+		width:35%;
+	}
+	100%{
+		width:0;
+		left:100%;
+	}
+}
+@keyframes right-to-left{
+	0%{
+		width:0;
+		right:0;
+	}
+	50%{
+		width:35%;
+	}
+	100%{
+		width:0;
+		right:100%;
+	}
+}
+/*两边圆环把手*/
+#left-hand,
+#right-hand{
+	position:absolute;
+	top:50%;
+	width:15px;
+  	height:15px;
+  	margin-top:-7.5px;
+  	border:1px solid #fff;
+  	background-color:#000;
+  	border-radius:50%;
+  	/*防止content里的字在提示框移动时溢出*/
+  	overflow:hidden;
+  	transition:all .3s .3s;
+  	cursor:pointer;
+}
+#left-hand{
+	left:-18px;
+}
+#right-hand{
+	right:-18px;
+}
+/*两边提示框*/
+#line .active{
+	width:90px;
+	height:45px;
+	margin-top:-22.5px;
+	border-radius:5px;
+	border-color:#fff;
+}
+/*提示框内的字*/
+#left-hand.show:after,
+#right-hand.show:after{
+	display:block;
+	color:#fff;
+	text-align:center;
+	line-height:45px;
+}
+#left-hand.show:after{
+	content:"扫码登录";
+}
+#right-hand.show:after{
+	content:"密码登录";
+}
+
+/*表单*/
+/*修改placehoder字体颜色*/
+input::-webkit-input-placeholder{
+    color:#fff;
+}
+input::-moz-placeholder{
+    color:#fff;
+}
+input:-moz-placeholder{
+    color:#fff;
+}
+input:-ms-input-placeholder{
+    color:#fff;
+}
+#register-box .register{
+	position:relative;
+}
+#register-box .register form{
+	width:350px;
+	padding:30px;
+	box-sizing:border-box;
+	border:1px solid #fff;
+	border-radius:5px;
+	background-color:transparent;
+}
+#register-box .register input{
+	width:280px;
+	height:40px;
+	background-color:transparent;
+	border:none;
+	border-bottom:1px solid #fff;
+	color:#fff;
+}
+/*扫码登录*/
+#register-box .register .scan-code{
+	position:absolute;
+	left:0;
+	top:0;
+}
+/*扫码登录隐藏样式*/
+#register-box .register .scan-hide{
+	animation:runscan1 .5s linear;
+}
+/*扫码登录显示样式*/
+#register-box .register .scan-show{
+	animation:runscan2 .5s linear;
+}
+/*扫码登录滑出*/
+@keyframes runscan1{
+	0%{
+		transform:rotate(0deg) translate(0);
+	}
+	100%{
+		transform:rotate(10deg) translate(200%);
+	}
+}
+/*扫码登录滑入*/
+@keyframes runscan2{
+	0%{
+		transform:rotate(10deg) translate(200%);
+	}
+	100%{
+		transform:rotate(0deg) translate(0);
+	}
+}
+#register-box .register .scan-code>p{
+	width:100%;
+	margin-bottom:20px;
+	text-align:center;
+	color:#fff;
+}
+#register-box .register .scan-code>span{
+	display:block;
+	width:200px;
+	height:200px;
+	margin:0 auto;
+	background:url(../caseimg/QR-code.png) no-repeat 0 0;
+}
+/*密码登录*/
+#register-box .register .pas{
+	position:absolute;
+	left:0;
+	top:0;
+	font-size:13px;
+	opacity:0;
+}
+/*密码登录显示样式*/
+#register-box .register .pas-show{
+	animation:runpas1 .5s linear;
+}
+/*密码登录隐藏样式*/
+#register-box .register .pas-hide{
+	animation:runpas2 .5s linear;
+}
+/*密码登录滑入*/
+@keyframes runpas1{
+	0%{
+		transform:rotate(-10deg) translate(-200%);
+	}
+	100%{
+		transform:rotate(0deg) translate(0);
+	}
+}
+/*密码登录滑出*/
+@keyframes runpas2{
+	0%{
+		transform:rotate(0deg) translate(0);
+	}
+	100%{
+		transform:rotate(-10deg) translate(-200%);
+	}
+}
+#register-box .register .pas li{
+	position:relative;
+	width:280px;
+	margin-bottom:25px;
+}
+#register-box .register .pas .err{
+	position:absolute;
+	right:-210px;
+	top:-50px;
+	width:160px;
+	padding:5px;
+	color:aqua;
+	font-size:14px;
+	opacity:0;
+	border-radius:5px;
+	transition:all .5s;
+}
+#register-box .register .pas li:last-child{
+	margin-bottom:0;
+}
+#register-box .register .pas .message>input{
+	float:left;
+	width:120px;
+}
+#register-box .register .pas .message>input:last-child{
+	float:right;
+	height:40px;
+	border:1px solid #fff;
+	font-size:15px;
+	cursor:pointer;
+}
+#register-box .register .pas .remember>input{
+	width:auto;
+	height:auto;
+	margin-right:6px;
+	border-bottom:none;
+	vertical-align:middle;
+}
+#register-box .register .pas .submit>input{
+	width:100%;
+	height:40px;
+	background-color:transparent;
+	border:1px solid #fff;
+	font-size:15px;
+	cursor:pointer;
+}
+#register-box .register .pas .forget>a{
+	float:left;
+	text-decoration:underline;
+	color:#fff;
+	font-size:13px;
+}
+#register-box .register .pas .forget>a:last-child{
+	float:right;
+}

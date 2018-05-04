@@ -1,0 +1,130 @@
+/*样式重置*/
+*{
+	padding:0;
+	margin:0;
+}
+a{
+	text-decoration:none;
+}
+input,button{
+	outline:none;
+}
+ul li{
+	list-style:none;
+}
+
+
+body{
+	width:100%;
+	overflow:hidden;
+	font-family: Arial, 'Microsoft YaHei';
+	/*使页面上的字体在渲染时抗锯齿,使用后字体看起来更清晰*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/*导航*/
+#nav{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:70px;
+	background-color:rgba(0,0,0,.1);
+	font-size:13px;
+	color:#fff;
+	z-index:99;
+}
+/*logo*/
+#nav .logo{
+	float:left;
+	width:8%;
+	height:30px;
+	margin:20px 0 0 50px;
+	background:url(../caseimg/logo1.png) no-repeat 0 0;
+	background-size:cover;
+}
+/*导航条*/
+#nav .nav-bar{
+	position:relative;
+	float:left;
+	margin:17px 0 0 10%;
+	line-height:36px;
+}
+#nav .nav-bar .nav-bg{
+	position:absolute;
+	left:0;
+	top:0;
+	width:92px;
+	height:36px;
+	border:1px solid #fff;
+	border-radius:20px;
+	transition:all .3s;
+	/*使得可穿过它点击底下的a标签*/
+	pointer-events:none;
+}
+#nav .nav-bar>a{
+	display:inline-block;
+	width:92px;
+	margin-right:20px;
+	text-align:center;
+	font-size:13px;
+	color:#fff;
+}
+#nav .nav-bar>a:last-child{
+	margin-right:0;
+}
+/*分享*/
+#nav .share{
+	float:right;
+	margin:25.5px 30px 0  0;
+}
+#nav .share>li{
+	position:relative;
+	float:left;
+	margin-right:20px;
+}
+#nav .share a{
+	display:inline-block;
+	width:19px;
+	height:19px;
+	transition:all .5s;
+}
+#nav .share>li:first-child>a{
+	background:url(../caseimg/i1_2.png) no-repeat 0 0;
+}
+#nav .share>li:nth-child(2)>a{
+	background:url(../caseimg/i2_2.png) no-repeat 0 0;
+}
+#nav .share>li:nth-child(3)>a{
+	background:url(../caseimg/i3_2.png) no-repeat 0 0;
+}
+#nav .share .ca-code{
+	position:absolute;
+	left:-70px;
+	top:0px;
+	padding:20px;
+	background-color:rgba(0,0,0,.2);
+	opacity:0;
+	box-shadow:0 0 5px #fff;
+	transition:all .3s;
+	pointer-events:none;
+}
+#nav .share .ca-code>p{
+	width:100%;
+	margin-bottom:15px;
+	font-size:15px;
+	text-align:center;
+}
+#nav .share>li:nth-child(2)>a:hover+div{
+	top:50px;
+	opacity:1;
+}
+#nav .share>li>a:hover{
+	transform:rotate(360deg);
+}
