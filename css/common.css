@@ -108,6 +108,8 @@ body{
 	position:absolute;
 	left:-70px;
 	top:0px;
+	width:126px;
+	height:160px;
 	padding:20px;
 	background-color:rgba(0,0,0,.2);
 	opacity:0;
@@ -120,6 +122,9 @@ body{
 	margin-bottom:15px;
 	font-size:15px;
 	text-align:center;
+}
+#nav .share .ca-code>img{
+	width:100%;
 }
 #nav .share>li:nth-child(2)>a:hover+div{
 	top:50px;

@@ -69,7 +69,6 @@ $(function(){
 			})
 			b_i=1;
 		}
-		console.log(b_i);
 		b_c();
 	}
 //	向右滑
@@ -109,6 +108,11 @@ $(function(){
 //	回到顶部
 	$(window).scroll(function(){
 		var disc=$(this).scrollTop();
+		if(disc>0){
+			$("#back-top").stop(false,true).fadeIn();
+		}else{
+			$("#back-top").stop(false,true).fadeOut();
+		}
 		$("#back-top").click(function(){
 			var i=disc;
 			var timer=setInterval(function(){
